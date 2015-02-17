@@ -12,7 +12,7 @@ function wait_for_wildfly() {
 }
 
 echo "==> Starting WildFly..."
-$JBOSS_HOME/bin/$JBOSS_MODE.sh -c $JBOSS_CONFIG > /dev/null &
+$JBOSS_HOME/bin/$JBOSS_MODE.sh -c $JBOSS_CONFIG &
 
 echo "==> Waiting..."
 wait_for_wildfly
