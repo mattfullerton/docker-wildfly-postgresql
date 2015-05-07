@@ -32,4 +32,9 @@ RUN /opt/jboss/wildfly/bin/add-user.sh admin INSERTPASSWORD --silent
 # Use the modules
 ADD standalone.xml /opt/jboss/wildfly/standalone/configuration/
 
+# Install PhantomJS
+USER root
+RUN yum -y install https://dcallagh.fedorapeople.org/phantomjs/phantomjs-1.9.7-1.fc20.x86_64.rpm
+RUN yum -y install freetype fontconfig urw-fonts
+
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
